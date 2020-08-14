@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .search-header {
   position: fixed;
   top: 0;

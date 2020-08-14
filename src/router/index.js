@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import index from '@/page/index'
-import detail from '@/page/detail'
-import channelManage from '@/page/channelManage'
-import search from '@/page/search'
-import searchDetail from '@/page/searchDetail'
-import collection from '@/page/collection'
-import collectDetail from '@/page/collectDetail'
+import index from '@/page/index.vue'
+import detail from '@/page/detail.vue'
+import channelManage from '@/page/channelManage.vue'
+import search from '@/page/search.vue'
+import searchDetail from '@/page/searchDetail.vue'
+import collection from '@/page/collection.vue'
+import collectDetail from '@/page/collectDetail.vue'
 Vue.use(VueRouter)
 
   const routes = [

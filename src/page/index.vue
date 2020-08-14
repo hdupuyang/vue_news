@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import vHeader from '@/components/vHeader'
-import vNav from '@/components/vNav'
-import my from '@/components/my'
+import vHeader from '@/components/vHeader.vue'
+import vNav from '@/components/vNav.vue'
+import my from '@/components/my.vue'
 export default {
   created() {
     this.$store.commit('muShowMy', false)
@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .pos-header {
   position: fixed;
   top: 0;

@@ -4,7 +4,7 @@
       <div class="nav">
         <div class="channel">
           <ul>
-            <li v-for="(channel, index) in channels" :key="index" :class="{ active : isActive === index }" @click="clickChannel(channel,index)">{{channel}}</li>
+            <li v-for="(channel, index) in channels" :key="index" :class="{ active : $store.state.isActive === index }" @click="clickChannel(channel,index)">{{channel}}</li>
           </ul>
         </div>
         <div class="addChannel">
@@ -24,7 +24,7 @@
               <div class="newsTitle">{{item.title}}</div>
               <div class="newsMessage">
                 <span>{{item.time}}</span>
-                <span>{{item.src || '爱新闻'}}</span>
+                <span>{{item.src}}</span>
               </div>
             </div>
           </div>
@@ -52,20 +52,13 @@ export default {
     },
     isLoading() {
       return this.$store.state.load
-    },
-    isActive:{
-      get(){return this.$store.state.isActive},
-      set(val){
-        this.$store.state.isActive=val
-      }
     }
   },
   methods: {
     clickChannel(channel,index) {
       this.$store.state.channelData = ''
       scrollTo(0,0)
-      this.$store.state.load = true
-      this.isActive = index
+      this.$store.commit('loading',true)
       this.$store.commit('muChannelIndex', index)
       this.$store.commit('muIsActive', index)
       this.$store.dispatch('acGetData', this.$store.state.channels[this.$store.state.channelIndex])
@@ -78,7 +71,6 @@ export default {
       } else {
         this.$store.commit('muLikeImg', require("../assets/like.png"))
       }
-      // this.$router.push({name: 'detail', params: { item : item }})
     },
     toChannelManage() {
       this.$router.push('/channelManage')
@@ -87,7 +79,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .nav-content {
   margin-top: 1.2rem;
 }

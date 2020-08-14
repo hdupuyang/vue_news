@@ -67,7 +67,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .mask {
   position: fixed;
   top: 0;

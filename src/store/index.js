@@ -79,8 +79,11 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         this._vm.$api.article.channelItems(channel)
           .then(res => {
+            console.log(res)
             commit('muGetData', res.data.result.list)
-            this.state.load = false
+            commit('loading',false)
+          }).catch(e=>{
+            console.error(e)
           })
         resolve()
       })

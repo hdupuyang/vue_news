@@ -10,7 +10,7 @@
         <div class="title">{{channelNewData &&　channelNewData.title}}</div>
         <div class="message">
           <span>{{channelNewData && channelNewData.time }}</span>
-          <span>{{channelNewData && channelNewData.src || '爱新闻'}}</span>
+          <span>{{channelNewData && channelNewData.src}}</span>
         </div>
         <img :src="channelNewData && channelNewData.pic || require('../assets/tongyong.jpg')">
         <div class="newsContent" v-html="channelNewData && channelNewData.content"></div>
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .detail {
   overflow: hidden;
 }

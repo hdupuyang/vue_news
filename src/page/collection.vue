@@ -16,8 +16,8 @@
           <div class="new-right">
             <div class="new-title">{{item.title}}</div>
             <div class="new-message">
-              <span>{{item.time || '2017-06-07 12:00'}}</span>
-              <span>{{item.src || '爱新闻'}}</span>
+              <span>{{item.time}}</span>
+              <span>{{item.src}}</span>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .collection-header {
   width: 100%;
   height: 1.33rem;
